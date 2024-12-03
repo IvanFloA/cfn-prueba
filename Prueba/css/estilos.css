@@ -1,0 +1,366 @@
+/* *************************Propiedades personalizadas************************* */
+:root {
+    --first-color: #004067;
+    --first-alpha-color: rgba(0,64,103,0.75);
+    --second-color: #f1e500;
+    --second-alpha-color: rgba(241,229,0,0.75);
+    --third-color: #d90062;
+    --third-alpha-color: rgba(217,0,98,0.75);
+    --ocre-color: #eeb600;
+    --ocre-alpha-color: rgba(238,182,0,0.25);
+    --white-color: #fff;
+    --gray-light-color: #f3f3f3;
+    --gray-color: #ccc;
+    --gray-dark-color: #666;
+    --blak-color: #000;
+    --link-color: #509ee3;
+    --title-color: #333;
+    --text-color: #222;
+    --white-alpha-color: rgba(255,255,255,0.5);
+    --black-alpha-color: rgba(0,0,0,0.5);
+    --font: "Nunito", sans-serif;
+    --max-width: 1200px;
+    --header-height: 4rem;
+}
+/* *************************Reseteo************************* */
+html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text-color);
+}
+a {
+    color: var(--link-color);
+    transition: all 0.5s ease-out;
+}
+a:hover {
+    opacity: 0.75;
+}
+h1{
+    margin: 0;
+    font-size: 2rem;
+}
+h2{
+    margin: 0;
+    font-size: 1.5rem;
+}
+h3{
+    margin: 0;
+    font-size: 1.25rem;
+}
+h4{
+    margin: 0;
+    font-size: 1rem;
+}
+h5{
+    margin: 0;
+    font-size: 0.85rem;
+}
+h6{
+    margin: 0;
+    font-size: 0.7rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+p {
+    line-height: 1.6;
+}
+/* *************************Componentes************************* */
+/* *************************Utilidades************************* */
+/* *************************Estilos del sitio************************* */
+
+/* **********Inicio - header********** */
+
+.header {
+    /*Es elemento fijo y pierde propiedades de ancho y alto por eso se pone manual */
+    position: fixed; 
+    left: 0;
+    bottom: 0;
+    /*Evitamos que quede algo encima del menu */
+    z-index: 999;
+    padding: 0.2rem;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--ocre-color);
+}
+
+.header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+}
+
+.logo a {
+    color: var(--first-color);
+    font-weight: bold;
+    margin: auto;
+    vertical-align: middle;
+}
+
+/* **********Fin - header********** */
+/* **********Inicio - Front-page********** */
+/* **********Fin - Front-page********** */
+/* **********Inicio - About********** */
+
+.about > article {
+    margin-bottom: 2rem;
+}
+
+/* **********Fin - About********** */
+/* **********Inicio - Cualidades********** */
+
+.service-card {
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.service-card h3 {
+    color: var(--title-color);
+}
+
+.service-card svg {
+    fill: var(--first-color);
+    margin-bottom: 1.25rem;
+}
+
+.social-media a {
+    text-decoration: none;
+    padding: 0 0.2rem;
+}
+
+.social-media svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: var(--third-color);
+}
+
+.social-media svg:hover {
+    fill: var(--second-color);
+}
+
+/* **********Fin - Cualidades********** */
+/* **********Inicio - Descúbrenos********** */
+
+.discover-card {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.discover-card img {
+    width: 100%;
+    height: 100%;
+    /*Evita que se deforme las imagenes pero se recomiendan img cuadradas */
+    object-fit: cover; 
+}
+
+.discover-card-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--first-alpha-color);
+    color: var(--white-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.discover-card:hover .discover-card-info {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.discover-card-info > div {
+    padding: 1rem;
+    border: thin solid var(--white-color);
+    width: 100%;
+    height: 100%;
+}
+
+/* **********Fin - Descúbrenos********** */
+/* **********Inicio - Tour-Virtual********** */
+
+.tour {
+    background-color: var(--ocre-alpha-color);
+    margin: 0;
+    padding: 2rem;
+}
+
+/* **********Fin - Tour-Virtual********** */
+/* **********Inicio - Interesados********** */
+
+.contact-card{
+    background-color: var(--white-color);
+    margin: 1.5rem auto;
+    padding: 1rem;
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-card > svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: var(--third-color);
+}
+
+.contact-card > h5 {
+    margin: 0.2rem;
+    font-size: 1rem;
+}
+.contact-card > small {
+    margin: -0.5rem;
+    font-size: 0.8rem;
+}
+
+/* **********Fin - Interesados********** */
+/* **********Inicio - Footer********** */
+
+.footer-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* justify-content: space-between; */
+    justify-items: center;
+    align-items: center;
+}
+
+.footer-cards {
+    margin: 1rem;
+    padding: 0;
+}
+
+.footer-card h4 {
+    color: var(--white-color);
+    text-align: center;
+    padding: 0.5rem;
+    margin: 1rem auto;
+}
+
+.footer-card p {
+    color: var(--white-color);
+    text-align: center;
+}
+
+/* **********Fin - Footer********** */
+
+/* ********************Media Querys******************** */
+
+@media screen and (min-width: 768px) {
+    /* Colocar estilos a las tarjetas de la sección de "Cualidades" */
+    /* aplicamos grid para colocarlo en dos colunnas */
+    .qualities > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        justify-content: space-between;
+        align-content: center;
+    }
+    /* Hacemos esto para que el titulo se desplace y ocupe dos colunas así quede solo y centrado  */
+    .qualities .section-title {
+        grid-column: span 2;
+    }
+    /* Colocar estilos a las tarjetas de la sección de "Descúbrenos" */
+    .discover > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+    .discover .section-title {
+        grid-column: span 2;
+    }
+    /* Colocar estilos a las tarjetas de la sección de "Contactos" */
+    .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
+    }
+    /* Colocar estilos a las tarjetas de la sección de "Tour" */
+    .tour > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
+    }
+    .tour .section-title {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* Colocar estilos a las tarjetas de la sección de "Header y menu" */
+    .header {
+        position: sticky;
+        top: 0;
+        padding: 0.5rem;
+        height: calc(var(--header-height)-0.5rem);
+    }
+    .header h2 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    /* Colocar estilos a las tarjetas de la sección de "About" */
+    .about {
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        justify-content: space-between;
+        align-content: center;
+    }
+    /* Colocar estilos a las tarjetas de la sección de "Cualidades" */
+    /* Hacemos esto para que el titulo se desplace y ocupe tres colunas así quede solo y centrado  */
+    .qualities .section-title {
+        grid-column: span 3;
+    }
+    /* Aplicamos grid para colocarlo en tres colunnas */
+    .qualities > .container {
+        grid-template-columns: repeat(3, 30%);
+    }
+    /* Colocar estilos a las tarjetas de la sección de "Descubrenos" */
+    .discover > .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .discover .section-title {
+        grid-column: span 3;
+    }
+    /* Colocar estilos a las tarjetas de la sección de "Tour virtual" */
+
+
+    /* Colocar estilos a las tarjetas de la sección de "Contactos" */
+    /* Acomodo y orden de la presentación de las tarjetas en base a Grid */
+    .contact-cards {
+        grid-template-columns: repeat(3,32%);
+    }
+    .contact-cards .contact-card:nth-child(2) {
+        order: 4;
+    }
+    .contact-cards .contact-card:nth-child(3) {
+        order: 1;
+    }
+    .contact-cards .contact-card:nth-child(4) {
+        order: 5;
+    }
+    .contact-cards .contact-card:nth-child(5) {
+        order: 3;
+    }
+    .contact-cards .contact-card:nth-child(6) {
+        order: 7;
+    }
+}

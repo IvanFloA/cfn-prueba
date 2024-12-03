@@ -1,0 +1,60 @@
+.header {
+    background-color: #004067;
+    height: 100px;
+    max-width: 100%;
+}
+
+/* logotipo de CFN */
+.header-div {
+    background-color: yellowgreen;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 19.6%;
+    text-align: right;
+}
+
+.header-div-a {
+    /* max-width: auto; */
+    /* height: 100%; */
+}
+
+.header-div-a-logo {
+    width: 50%;
+    height: auto;
+    
+}
+/* Fin del logo */
+/* Menú principal */
+.header-nav {
+    background-color: sandybrown;
+    display: inline-block;
+    width: 79.6;
+}
+
+.header-nav-ul {
+    /* background-color: pink; */
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav-ul-li {
+    background-color: #004067;
+    display: inline-block;
+    margin: .5em;
+    padding: .5em 0;
+    width: 18%;
+}
+
+.header-nav-ul-li-a {
+    background-color: #004067;
+    color: #fff;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header-nav-ul-li .header-nav-ul-li-a *:hover {
+    background-color: yellow;
+}
+/* Fin del menú */

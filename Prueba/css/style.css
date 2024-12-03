@@ -1,0 +1,647 @@
+/* **********Propiedades personalizadas********** */
+:root {
+    --first-color: #004067;
+    --first-alpha-color: rgba(0,64,103,0.75);
+    --second-color: #f1e500;
+    --second-alpha-color: rgba(241,229,0,0.75);
+    --third-color: #d90062;
+    --third-alpha-color: rgba(217,0,98,0.75);
+    --ocre-color: #eeb600;
+    --ocre-alpha-color: rgba(238,182,0,0.25);
+    --white-color: #fff;
+    --gray-light-color: #f3f3f3;
+    --gray-color: #ccc;
+    --gray-dark-color: #666;
+    --blak-color: #000;
+    --link-color: #509ee3;
+    --title-color: #333;
+    --text-color: #222;
+    --white-alpha-color: rgba(255,255,255,0.5);
+    --black-alpha-color: rgba(0,0,0,0.5);
+    --font: "Nunito", sans-serif;
+    --max-width: 1200px;
+    --header-height: 4rem;
+}
+/* **********Reseteo********** */
+html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--text-color);
+}
+a {
+    color: var(--link-color);
+    transition: all 0.5s ease-out;
+}
+a:hover {
+    opacity: 0.75;
+}
+h1{
+    margin: 0;
+    font-size: 2rem;
+}
+h2{
+    margin: 0;
+    font-size: 1.5rem;
+}
+h3{
+    margin: 0;
+    font-size: 1.25rem;
+}
+h4{
+    margin: 0;
+    font-size: 1rem;
+}
+h5{
+    margin: 0;
+    font-size: 0.85rem;
+}
+h6{
+    margin: 0;
+    font-size: 0.7rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+p {
+    line-height: 1.6;
+}
+/* ********************Componentes******************** */
+/* **********Seccion Portada */
+.hero-image {
+    background-image: url(../img/hero-image-home.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: var(--hero-attachment);
+}
+
+.hero-image-customers {
+    background-image: url(../assets/hero-image-customers.jpg);
+}
+
+.hero-image-opacity {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--hero-opacity-color);
+}
+
+.hero-image-title {
+    font-size: 5.5vw;
+    color: var(--hero-text-color);
+}
+
+
+
+/* **********Seccion menu */
+.menu-btn {
+    outline: thin solid var(--white-color);
+    border: 0;
+    cursor: pointer;
+    background-color: var(--ocre-color);
+}
+
+.menu-btn svg {
+    fill: var(--white-color);
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    bottom: var(--header-height);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--ocre-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.menu.is-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu a {
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--first-color);
+}
+
+.menu a:hover {
+    color: var(--white-color);
+    background-color: var(--first-color);
+}
+
+@media screen and (min-width: 1024px) {
+    .menu-btn {
+        display: none;
+    }
+
+    .menu {
+        position: static;
+        width: auto;
+        flex-direction: row;
+        opacity: 1;
+        pointer-events: auto;
+        font-size: 0.6rem;
+    }
+
+    .menu a {
+        padding: 0 1rem;
+    }
+
+    .menu a:last-child {
+        padding-right: 0;
+    }
+
+    .menu a:hover {
+        background-color: transparent;
+    }
+}
+
+/* **********Seccion nosotros */
+/* **********ProgressBar */
+progress {
+    width: 100%;
+    height: 1rem;
+    background-color: var(--gray-color);
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--gray-color);
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--gray-dark-color);
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--gray-dark-color);
+}
+
+.progress {
+    margin: 1rem auto;
+}
+
+.progress > p {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ********************Utilidades******************** */
+
+.box-shadow-1 {
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.60);
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--max-width);
+}
+
+/* **********Seccion portada */
+.btn {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white-color);
+    background-color: var(--first-color);
+}
+
+/* **********Seccion cualidades */
+/* Colocar un fondo gris claro en esta sección */
+.bg-gray-light {
+    background-color: var(--gray-light-color);
+}
+
+/* Estilos para los titulos de cada sección */
+.section-title {
+    border-top: thick solid var(--first-color);
+    border-bottom: thick solid var(--first-color);
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    color: var(--title-color);
+    width: 250px;
+}
+
+/* **********Seccion nosotros */
+/* Colocar las imagenes que tengan esa clase en escala de grises */
+.gray-scale {
+    filter: grayscale(1);
+}
+
+/* Clase none para esconder el boton de cierre del menu */
+.none {
+    display: none;
+}
+
+/* Clase para poner padding entre las secciones */
+.section {
+    padding: 2rem 1rem;
+}
+/* Alineación de textos en tamaño de pantalla de dispositivos moviles */
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+
+.contact {
+    padding: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    /* El acomodo del contenido a pantalla completa */
+    .full-lg-screen {
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    /* cambiar el alineado del texto segun el tamaño de la pantalla */
+    .text-lg-center {
+        text-align: center;
+    }
+    .text-lg-left {
+        text-align: left;
+    }
+    .text-lg-right {
+        text-align: right;
+    }
+}
+
+/* ********************Estilos del sitio******************** */
+/* Colocar un margen entre los article que hay dentro de la section about */
+.about > article {
+    margin-bottom: 2rem;
+}
+
+.header {
+    position: fixed; /*Es elemento fijo y pierde propiedades de ancho y alto por eso se pone manual */
+    left: 0;
+    bottom: 0;
+    z-index: 999; /*Evitamos que quede algo encima del menu */
+    padding: 0.2rem;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--ocre-color);
+}
+
+.header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+}
+
+.logo a {
+    color: var(--first-color);
+    font-weight: bold;
+    margin: auto;
+    vertical-align: middle;
+}
+
+/* Colocar estilos a las tarjetas de la sección de "Contactos" */
+.contact-card{
+    background-color: var(--white-color);
+    margin: 1.5rem auto;
+    padding: 1rem;
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-card > svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: var(--third-color);
+}
+
+.contact-card > h5 {
+    margin: 0.2rem;
+    font-size: 1rem;
+}
+.contact-card > small {
+    margin: -0.5rem;
+    font-size: 0.8rem;
+}
+
+
+/* Colocar estilos a las tarjetas de la sección de "Descúbrenos" */
+.discover-card {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.discover-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Evita que se deforme las imagenes pero se recomiendan img cuadradas */
+}
+
+.discover-card-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--first-alpha-color);
+    color: var(--white-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.discover-card:hover .discover-card-info {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.discover-card-info > div {
+    padding: 1rem;
+    border: thin solid var(--white-color);
+    width: 100%;
+    height: 100%;
+}
+
+/* Colocar estilos a las tarjetas de la sección de "Cualidades" */
+.service-card {
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.service-card h3 {
+    color: var(--title-color);
+}
+
+.service-card img {
+    fill: var(--first-color);
+    margin-bottom: 1.25rem;
+    width: 90px;
+    height: 90px;
+}
+
+.social-media a {
+    text-decoration: none;
+    padding: 0 0.2rem;
+}
+
+.social-media svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: var(--third-color);
+}
+
+.social-media svg:hover {
+    fill: var(--second-color);
+}
+
+/* Colocar estilos a las tarjetas de la sección de "Tour" */
+.tour {
+    background-color: var(--ocre-alpha-color);
+    margin: 0;
+    padding: 2rem;
+}
+
+/* Colocar estilos a las tarjetas de la sección de "footer" */
+.footer {
+    background-color: var(--first-color);
+    color: var(--white-color);
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: var(--header-height);
+}
+
+.footer-cards {
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+/* Colocar un corte a la hero-image de tipo ola */
+.ola {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+}
+
+/* Esto es una prueba de menu */
+/* .menu {
+    list-style: none;
+    background-color: var(--gray-light-color);
+    padding: 20px;
+}
+
+.menu li {
+    position: relative;
+    display: inline-block;
+}
+
+.menu li:hover ul {
+    display: block;
+}
+
+.menu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--gray-light-color)
+}
+
+.menu ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #d90062;
+}
+
+.menu ul li a:hover {
+    background-color: #eeb600;
+}
+
+.menu li a {
+    text-decoration: none;
+    padding: 10px;   
+} */
+
+/* Esto es una prueba de menu */
+
+
+
+/* **********media querys para hacer responsive al sitio********** */
+@media screen and (min-width: 768px) {
+    /* Colocar estilos a las tarjetas de la sección de "Contactos" */
+    .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
+    }
+
+    /* Colocar estilos a las tarjetas de la sección de "Tour" */
+    .tour > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        justify-content: space-between;
+    }
+
+    .tour .section-title {
+        grid-column: span 2;
+    }
+
+    /* Colocar estilos a las tarjetas de la sección de "Descúbrenos" */
+    .discover > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .discover .section-title {
+        grid-column: span 2;
+    }
+
+    /* Colocamos el hijo del contenedor que es "Cualidades" y le aplicamos grid para colocarlo en dos colunnas */
+    .qualities > .container {
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        justify-content: space-between;
+        align-content: center;
+    }
+    /* Hacemos esto para que el titulo se desplace y ocupe dos colunas así quede solo y centrado  */
+    .qualities .section-title {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* Colocar estilos a las tarjetas de la sección de "Contactos" */
+    /* Acomodo y orden de la presentación de las tarjetas en base a Grid */
+    .contact-cards {
+        grid-template-columns: repeat(3,32%);
+    }
+    .contact-cards .contact-card:nth-child(2) {
+        order: 4;
+    }
+    .contact-cards .contact-card:nth-child(3) {
+        order: 1;
+    }
+    .contact-cards .contact-card:nth-child(4) {
+        order: 5;
+    }
+    .contact-cards .contact-card:nth-child(5) {
+        order: 3;
+    }
+    .contact-cards .contact-card:nth-child(6) {
+        order: 7;
+    }
+
+    /* Colocar estilos a las tarjetas de la sección de "Descúbrenos" */
+    .discover > .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .discover .section-title {
+        grid-column: span 3;
+    }
+
+    /* Cabecera y menu */
+    .header {
+        position: sticky;
+        top: 0;
+        padding: 0.5rem;
+        height: calc(var(--header-height)-0.5rem);
+    }
+
+    .header h2 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    /* Columnas para la section about */
+    .about {
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    /* Colocamos el hijo del contenedor que es "Cualidades" y le aplicamos grid para colocarlo en tres colunnas */
+    .qualities > .container {
+        grid-template-columns: repeat(3, 30%);
+    }
+    /* Hacemos esto para que el titulo se desplace y ocupe tres colunas así quede solo y centrado  */
+    .qualities .section-title {
+        grid-column: span 3;
+    }
+    /* Colocar estilos a las tarjetas de la sección de "Footer" */
+    .footer {
+        margin-bottom: 0;
+    }
+    
+    .footer-card {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .footer-cards {
+        margin: 0.5rem;
+    }
+    
+    .footer-card h4 {
+        grid-column: span 3;
+    }
+}
+
+
+https://github.com/IvanFloA/
+https://IvanFloA.github.io/
+
+
+https://github.com/IvanFloA/cfn-prueba/prueba
+https://IvanFloA.github.io/cfn-prueba/prueba
+
+IvanFloA/cfn-prueba
+Repositorio de prueba de pagina CFN de IvanFloA
